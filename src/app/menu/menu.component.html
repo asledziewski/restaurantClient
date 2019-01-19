@@ -1,0 +1,17 @@
+<div class="background">
+  <div class="content">
+    <div class="title">
+      Menu
+    </div>
+    <div class="text">
+      <table align="center" class="menu">
+        <tr *ngFor="let dish of dishes">
+          <td><span class="englishName">{{dish.englishName}}</span><br>
+            <span class="polishName">{{dish.polishName}}</span></td>
+          <td class="price">{{dish.price}}</td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+</div>

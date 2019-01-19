@@ -1,0 +1,23 @@
+li a {
+  color: white;
+}
+
+li a:focus {
+  background-color: #EAB126;
+}
+
+.active {
+  background-color: #EAB126;
+}
+
+li a:hover {
+  background-color: #EAB126;
+  color: black;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+}
+
+

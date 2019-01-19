@@ -1,0 +1,50 @@
+.background {
+  background-image: url("~src/assets/images/image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.content {
+  padding-top: 5em;
+  background-color: rgba(1, 1, 1, 0.6);
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+}
+
+.title {
+  font-size: 4em;
+}
+
+.text {
+  padding-top: 2em;
+}
+
+.englishName {
+  font-size: 2em;
+  text-align: right;
+}
+
+.polishName {
+  font-size: 1em;
+}
+
+.price {
+  font-size: 3em;
+  text-align: right;
+}
+
+table {
+  width: 50vw;
+  text-align: justify;
+}
+
+tr {
+  border-bottom: 1px solid #ddd;
+}
+
+td {
+  padding-top: 0.5em;
+}
