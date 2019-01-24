@@ -1,3 +1,11 @@
+nav{
+  background-color: #222;
+}
+
+.dropdown-menu{
+  background-color: #222;
+}
+
 li a {
   color: white;
 }
@@ -19,5 +27,10 @@ li a:hover {
   position: fixed;
   width: 100%;
 }
+
+.dropdown-menu {
+  color: black;
+}
+
 
 

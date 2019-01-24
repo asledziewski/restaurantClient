@@ -14,10 +14,11 @@
   text-align: center;
 }
 
-.title {
-  font-size: 4em;
-}
-
 .text {
   padding: 2em 5em;
+}
+
+
+.invalid-feedback{
+  color: red;
 }
