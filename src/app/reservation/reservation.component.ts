@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {User} from '@app/_models';
+import {AuthenticationService} from '@app/_services';
 
 @Component({
   selector: 'app-reservation',
@@ -7,7 +9,9 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ReservationComponent implements OnInit {
 
-  constructor() {
+  currentUser: User;
+  constructor(private authenticationService: AuthenticationService) {
+    this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
   }
 
   ngOnInit() {

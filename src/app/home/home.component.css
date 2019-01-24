@@ -21,3 +21,20 @@
 .text {
   padding: 2em 5em;
 }
+
+table{
+  width: 100%;
+  text-align: left;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+a{
+  color: darkred;
+}
+
+.tab{
+  padding: 0em 2em;
+}
