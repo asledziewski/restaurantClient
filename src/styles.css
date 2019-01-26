@@ -1,3 +1,21 @@
+@import '@angular/material/prebuilt-themes/purple-green.css';
 body {
   margin: 0;
+  background-image: url("~src/assets/images/image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Lora', serif;
+}
+
+.content {
+  padding-top: 5em;
+  background-color: rgba(1, 1, 1, 0.6);
+  min-height: 100vh;
+  color: white;
+  text-align: center;
+}
+
+.title{
+  font-size: 3em;
 }

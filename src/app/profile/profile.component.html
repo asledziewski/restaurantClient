@@ -1,0 +1,8 @@
+<div class="content">
+  {{currentUser.userId}}<br>
+  {{currentUser.firstName}}<br>
+  {{currentUser.jwtToken}}<br>
+  {{currentUser.lastName}}<br>
+  {{currentUser.mail}}<br>
+  <li *ngFor="let role of currentUser.roles">{{role.roleName}}</li>
+</div>

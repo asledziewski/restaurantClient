@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class DishService {
 
-  private dishesUrl = 'api/dishes';
+  private dishesUrl = 'http://localhost:8080/dishes';
 
   constructor(private http: HttpClient,
               private messageService: MessageService) {
@@ -48,7 +48,7 @@ export class DishService {
   /** POST: add a new hero to the server */
   addDish(dish: Dish): Observable<Dish> {
     return this.http.post<Dish>(this.dishesUrl, dish, httpOptions).pipe(
-      tap((dish: Dish) => this.log(`added hero w/ id=${dish.id}`)),
+      tap((dish: Dish) => this.log(`added dish w/ id=${dish.id}`)),
       catchError(this.handleError<Dish>('Dish'))
     );
   }

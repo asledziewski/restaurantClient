@@ -21,3 +21,17 @@
 .text {
   padding: 2em 5em;
 }
+
+table{
+  width: 100%;
+  text-align: left;
+}
+
+
+a{
+  color: darkred;
+}
+
+.tab{
+  padding: 0em 2em;
+}

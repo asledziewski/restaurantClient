@@ -1,9 +1,10 @@
-﻿import {Component, OnDestroy, OnInit} from '@angular/core';
+﻿import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {first} from 'rxjs/operators';
 
 import {User} from '@app/_models';
 import {AuthenticationService, UserService} from '@app/_services';
+import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-home',
@@ -14,6 +15,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   currentUser: User;
   currentUserSubscription: Subscription;
   users: User[] = [];
+  displayedColumns: string[] = ['ID', 'firstName', 'lastName', 'email', 'roles', 'delete'];
+  dataSource = new MatTableDataSource<User>();
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -24,8 +27,13 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
   }
 
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
   ngOnInit() {
     this.loadAllUsers();
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   ngOnDestroy() {
@@ -41,7 +49,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   private loadAllUsers() {
     this.userService.getAll().pipe(first()).subscribe(users => {
-      this.users = users;
+      this.dataSource.data = users;
     });
   }
 }
+

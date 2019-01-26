@@ -8,7 +8,7 @@
         <tr *ngFor="let dish of dishes">
           <td><span class="englishName">{{dish.englishName}}</span><br>
             <span class="polishName">{{dish.polishName}}</span></td>
-          <td class="price">{{dish.price}}</td>
+          <td class="price">{{dish.price | number:'.2'}}</td>
         </tr>
 
       </table>

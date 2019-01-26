@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 // used to create fake backend
-import {ErrorInterceptor, fakeBackendProvider, JwtInterceptor} from './_helpers';
+import {ErrorInterceptor, JwtInterceptor} from './_helpers';
 
 import {AppComponent} from './app.component';
 import {routing} from './app.routing';
@@ -18,10 +18,28 @@ import {ReservationComponent} from '@app/reservation/reservation.component';
 import {ServiceComponent} from '@app/service/service.component';
 import {ManagementComponent} from '@app/management/management.component';
 import {NavigationComponent} from '@app/navigation/navigation.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatPaginatorModule, MatSortModule} from '@angular/material';
+import { UserManagementComponent } from './user-management/user-management.component';
+import { TableManagementComponent } from './table-management/table-management.component';
+import { DishManagementComponent } from './dish-management/dish-management.component';
+import { BillComponent } from './bill/bill.component';
+
+import { ServiceTableComponent } from './service-table/service-table.component';
+import { ServiceReservationComponent } from './service-reservation/service-reservation.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ReservationManagementComponent } from './reservation-management/reservation-management.component';
+import {BillManagementComponent} from '@app/bill-management/bill-management.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     ReactiveFormsModule,
     HttpClientModule,
     routing
@@ -38,13 +56,21 @@ import {NavigationComponent} from '@app/navigation/navigation.component';
     ServiceComponent,
     ManagementComponent,
     NavigationComponent,
+    UserManagementComponent,
+    TableManagementComponent ,
+    DishManagementComponent ,
+    BillManagementComponent,
+    BillComponent,
+    ServiceReservationComponent,
+    ServiceTableComponent,
+    ProfileComponent,
+    ReservationManagementComponent,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
 
     // provider used to create fake backend
-    fakeBackendProvider
   ],
   bootstrap: [AppComponent]
 })

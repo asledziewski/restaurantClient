@@ -1,9 +1,9 @@
-﻿import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {first} from 'rxjs/operators';
+﻿import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
 
-import {AlertService, AuthenticationService} from '@app/_services';
+import { AlertService, AuthenticationService } from '@app/_services';
 
 @Component({
   selector: 'app-login',
@@ -29,20 +29,18 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  // convenience getter for easy access to form fields
-  get f() {
-    return this.loginForm.controls;
-  }
-
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      mail: ['', Validators.required, Validators.email],
       password: ['', Validators.required]
     });
 
     // get return url from route parameters or default to '/'
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
+
+  // convenience getter for easy access to form fields
+  get f() { return this.loginForm.controls; }
 
   onSubmit() {
     this.submitted = true;
@@ -53,10 +51,10 @@ export class LoginComponent implements OnInit {
     }
 
     this.loading = true;
-    this.authenticationService.login(this.f.username.value, this.f.password.value)
+    this.authenticationService.login(this.f.mail.value, this.f.password.value)
       .pipe(first())
       .subscribe(
-        data => {
+        () => {
           this.router.navigate([this.returnUrl]);
         },
         error => {
