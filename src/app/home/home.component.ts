@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   currentUser: User;
   currentUserSubscription: Subscription;
   users: User[] = [];
-  displayedColumns: string[] = ['ID', 'firstName', 'lastName', 'email', 'role', 'delete'];
+  displayedColumns: string[] = ['ID', 'firstName', 'lastName', 'email', 'roles', 'delete'];
   dataSource = new MatTableDataSource<User>();
 
   constructor(
