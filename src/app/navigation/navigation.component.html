@@ -22,7 +22,7 @@
         <li><a routerLink="/about" routerLinkActive="active">About</a></li>
         <li><a routerLink="/menu" routerLinkActive="active">Menu</a></li>
         <li><a routerLink="/reservation" routerLinkActive="active">Reservation</a></li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" routerLinkActive="active">Service</a>
+        <li class="dropdown" *ngIf="currentUser && currentUser.roles.length>1"><a class="dropdown-toggle" data-toggle="dropdown" href="#" routerLinkActive="active">Service</a>
           <ul class="dropdown-menu">
             <li><a routerLink="service/serviceTable" routerLinkActive="active">Tables</a></li>
             <li><a routerLink="service/serviceReservation" routerLinkActive="active">Reservations</a></li>
