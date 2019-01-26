@@ -1,9 +1,15 @@
-﻿export class User {
-  id: number;
+﻿import {Reservation} from '@app/_models/reservation';
+import {Role} from '@app/_models/role';
+
+export class User {
+  userId: number;
   mail: string;
-  password: string;
   firstName: string;
   lastName: string;
-  roles: string[];
-  token: string;
+  // password: string;
+  roles: Role[];
+  reservations: Reservation[];
+  jwtToken: string;
 }
+
+
