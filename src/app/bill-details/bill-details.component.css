@@ -1,0 +1,54 @@
+table{
+  width: 80%;
+  margin: auto;
+}
+.header{
+  font-size: 2em;
+}
+.text{
+  padding-top: 4em;
+}
+
+tr{
+  border-bottom: 1px solid #ddd;
+}
+
+.search-result {
+  width: 20em;
+  margin: auto;
+}
+.search-result li {
+  border-bottom: 1px solid #222;
+  border-left: 1px solid #222;
+  border-right: 1px solid #222;
+  width: 20em;
+  height: 2em;
+  padding: 5px;
+  background-color: white;
+}
+
+.search-result li:hover {
+  background-color: #EAB126;
+  color: black;
+}
+
+#search-box {
+  width: 20em;
+  height: 2em;
+}
+
+
+ul.search-result {
+  padding-left: 0;
+  margin:auto;
+  list-style-type: none;
+  color: black;
+}
+
+a.result{
+  color: black;
+}
+
+li.a{
+  color: black;
+}

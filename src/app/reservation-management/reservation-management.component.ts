@@ -49,3 +49,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 20, name: 'Calcium', weight: 40.078, symbol: 'Ca'},
   {position: 33, name: 'Calciuma', weight: 40.178, symbol: 'Cac'},
 ];
+
+
+

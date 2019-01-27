@@ -1,0 +1,14 @@
+table {
+  text-align: left;
+  width: 100%;
+  padding: auto;
+}
+
+
+.free{
+  background-color: rgba(0, 255, 0, 0.2);
+}
+
+.busy{
+  background-color: rgba(255, 0, 0, 0.2);
+}

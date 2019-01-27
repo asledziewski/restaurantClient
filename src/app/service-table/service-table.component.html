@@ -1,1 +1,28 @@
-<div class="content"></div>
+<!--<div class="content">-->
+<!--<div class="title">-->
+<!--<h1>Hi {{currentUser.firstName}}!</h1>-->
+<!--<p>You're logged in with Angular 7!!</p>-->
+<!--<h3>All registered users:</h3>-->
+<!--<ul>-->
+<!--<li *ngFor="let user of users">-->
+<!--{{user.username}} ({{user.firstName}} {{user.lastName}}) {{user.role}}-->
+<!-- - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--<div class="text">-->
+<!--</div>-->
+<!--</div>-->
+<div class="content">
+  <div class="text">
+    <app-alert></app-alert>
+    <table>
+      <caption>Table Service</caption>
+      <tr><td>Tables</td><td>Today's reservations</td></tr>
+      <tr>
+        <td><app-tables-tab></app-tables-tab></td>
+        <td><app-reservations-tab></app-reservations-tab></td>
+      </tr>
+    </table>
+  </div>
+</div>

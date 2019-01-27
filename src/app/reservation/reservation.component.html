@@ -5,27 +5,36 @@
     </div>
     <div class="text">
       <div *ngIf="currentUser">
+        <div class="txt">
         You can call 123-456-789 to make a reservation, or use form below and do it online!
-        <app-alert></app-alert>
-        <div style="overflow:hidden;">
+        </div>
+        <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+          <app-alert></app-alert>
           <div class="form-group">
-            <div class="row">
-              <div class="col-md-8">
-                <div id="datetimepicker12"></div>
-              </div>
+            <label for="attendees">Attendees number</label>
+            <input type="number" formControlName="attendees" class="form-control"
+                   [ngClass]="{ 'is-invalid': submitted && f.attendees.errors }" />
+            <div *ngIf="submitted && f.attendees.errors" class="invalid-feedback">
+              <div *ngIf="f.attendees.errors.required">Please specify number of attendees.</div>
+              <div *ngIf="f.attendees.errors.min">There has to be at least one attendee.</div>
+              <div *ngIf="f.attendees.errors.max">Number of attendees is too high.</div>
             </div>
           </div>
-          <script type="text/javascript">
-            $(function () {
-              $('#datetimepicker12').datetimepicker({
-                inline: true,
-                sideBySide: true
-              });
-            });
-          </script>
-        </div>
+          <div class="form-group">
+            <label for="date">Date</label><br>
+            <input  formControlName="date" [min]="min" [max]="max"  [owlDateTimeFilter]="myFilter" [owlDateTimeTrigger]="dtPicker2" [owlDateTime]="dtPicker2"  [ngClass]="{ 'is-invalid': submitted && f.date.errors }" />
+            <owl-date-time #dtPicker2 [stepMinute]="30" [pickerMode]="'dialog'"></owl-date-time>
+            <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+              <div *ngIf="f.date.errors.required">Date is required</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <br>
+            <button [disabled]="loading" class="btn btn-primary">Make a reservation</button>
+          </div>
+        </form>
       </div>
-      <div *ngIf="!currentUser">If you want to make a reservation, call 123-456-789 or <a routerLink="/login">login</a> and try to book a table online!</div>
+      <div *ngIf="!currentUser" class="txt">If you want to make a reservation, call 123-456-789 or <a routerLink="/login">login</a> and try to book a table online!</div>
     </div>
   </div>
 </div>

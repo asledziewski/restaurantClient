@@ -5,4 +5,6 @@
   {{currentUser.lastName}}<br>
   {{currentUser.mail}}<br>
   <li *ngFor="let role of currentUser.roles">{{role.roleName}}</li>
+
+  <li *ngFor="let reservation of currentUser.reservations">{{reservation.dateDays}} {{reservation.dateTime}} {{reservation.status}}</li>
 </div>

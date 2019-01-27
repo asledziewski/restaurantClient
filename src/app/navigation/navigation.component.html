@@ -28,7 +28,7 @@
             <li><a routerLink="service/serviceReservation" routerLinkActive="active">Reservations</a></li>
           </ul>
         </li>
-        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" routerLinkActive="active">Management</a>
+        <li class="dropdown" *ngIf="currentUser && currentUser.roles.length>2"><a class="dropdown-toggle" data-toggle="dropdown" href="#" routerLinkActive="active">Management</a>
         <ul class="dropdown-menu">
           <li><a routerLink="management/usersManagement" routerLinkActive="active">Users</a></li>
           <li><a routerLink="management/billsManagement" routerLinkActive="active">Bills</a></li>

@@ -1,0 +1,28 @@
+<div class="content">
+  <div class = "title">Bill {{id}} Table {{bill.rtableId}}  <br> Status: <span>{{bill.status}}</span></div>
+  <div class = "text">
+    <table>
+      <tr class="header"><td>Name</td><td>Price</td><td>Delete</td></tr>
+      <tr *ngFor="let position of positions">
+        <td>{{position.dishId.englishName}}</td>
+        <td>{{position.dishId.price | number:'.2'}}</td>
+        <td><a (click)="deletePosition(position.billPositionId)" class="glyphicon glyphicon-remove"></a></td>
+      </tr>
+      <tr class="header"><td>Total:</td><td>{{bill.value | number: '.2'}}</td><td></td></tr>
+    </table>
+    <br>
+    <div id="search-component">
+      <h4>Add Dish</h4>
+
+      <ul class="search-result">
+        <li *ngFor="let dish of dishes$ | async" (click)="addPosition(dish.dishId)" >
+          <a class="result">
+            {{dish.englishName}}
+          </a>
+        </li>
+      </ul>
+      <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+    </div>
+    <button class="btn btn-primary" (click)="closeBill()">Close Bill</button>
+  </div>
+</div>

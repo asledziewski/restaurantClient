@@ -22,16 +22,17 @@
   padding: 2em 5em;
 }
 
-table{
+table {
   width: 100%;
   text-align: left;
 }
 
+.tab{
+  padding: 0em 2em;
+}
+
+
 
 a{
   color: darkred;
-}
-
-.tab{
-  padding: 0em 2em;
 }

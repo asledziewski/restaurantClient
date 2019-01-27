@@ -1,5 +1,5 @@
 export class Dish {
-  id: number;
+  dishId: number;
   englishName: string;
   polishName: string;
   price: number;

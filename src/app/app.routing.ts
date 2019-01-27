@@ -17,6 +17,7 @@ import {BillManagementComponent} from '@app/bill-management/bill-management.comp
 import {DishManagementComponent} from '@app/dish-management/dish-management.component';
 import {TableManagementComponent} from '@app/table-management/table-management.component';
 import {ProfileComponent} from '@app/profile/profile.component';
+import {BillDetailsComponent} from '@app/bill-details/bill-details.component';
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
@@ -35,6 +36,7 @@ const appRoutes: Routes = [
   {path: 'management/dishesManagement', component: DishManagementComponent},
   {path: 'management/tablesManagement', component: TableManagementComponent},
   {path: 'profile', component: ProfileComponent},
+  {path: 'bill/:id', component: BillDetailsComponent},
   {path: '**', redirectTo: 'about', pathMatch: 'full'}
 ];
 // canActivate: [AuthGuard]

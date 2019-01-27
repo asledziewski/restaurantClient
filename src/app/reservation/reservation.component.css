@@ -1,20 +1,8 @@
-.background {
-  background-image: url("~src/assets/images/image.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  min-height: 100vh;
-}
-
-.content {
-  padding-top: 5em;
-  background-color: rgba(1, 1, 1, 0.6);
-  min-height: 100vh;
-  color: white;
+input{
   text-align: center;
+  width: 50vw;
 }
 
-
-.text {
+.txt{
   padding: 2em 5em;
 }

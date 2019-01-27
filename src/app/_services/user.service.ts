@@ -17,6 +17,10 @@ export class UserService {
     return this.http.get(`${environment.apiUrl}/users/${id}`);
   }
 
+  addUser(firstName: string, lastName: string, mail: string, password: string, roles: string[]) {
+    return this.http.post(`${environment.apiUrl}/users/`, {firstName, lastName, mail, password, roles});
+  }
+
   register(user: User) {
     return this.http.post(`${environment.apiUrl}/auth/register`, user);
   }

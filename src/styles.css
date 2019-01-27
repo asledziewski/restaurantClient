@@ -1,4 +1,5 @@
 @import '@angular/material/prebuilt-themes/purple-green.css';
+@import "~ng-pick-datetime/assets/style/picker.min.css";
 body {
   margin: 0;
   background-image: url("~src/assets/images/image.jpg");
@@ -8,14 +9,101 @@ body {
   font-family: 'Lora', serif;
 }
 
+form{
+  width: 60%;
+  margin: auto;
+  padding-top: 4em;
+}
+input{
+  color: black;
+  width: auto;
+  margin: auto;
+}
+
 .content {
   padding-top: 5em;
-  background-color: rgba(1, 1, 1, 0.6);
+  padding-bottom: 5em;
+  background-color: rgba(1, 1, 1, 0.45);
   min-height: 100vh;
+  width: 100%;
   color: white;
   text-align: center;
+  overflow-x: auto;
 }
 
 .title{
   font-size: 3em;
+}
+
+
+.ng-valid:not(form) {
+  border-left: 5px solid #42A948;
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442;
+}
+
+.btn-primary {
+  background-color: #EAB126; }
+
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active {
+  background: #EAB126;
+  color: black;
+}
+
+.btn-primary:active:hover{
+  background: #EAB126;
+  color: black;
+}
+
+.btn-link {
+  color: #EAB126;
+}
+
+.btn-link:hover, .btn-link:focus, .btn-link:active, .btn-link.active {
+  color: #FBC237;
+  background-color: rgba(255,255,255,0.2);
+}
+
+.btn-link:active:hover{
+  color: #FBC237;
+  background-color: rgba(255,255,255,0.2);
+}
+
+
+a {
+  color: #EAB126;
+}
+
+a:hover, .a:focus, .a:active, .a.active {
+  color: #FBC237;
+ /* background-color: rgba(255,255,255,0.2);*/
+}
+
+a:active:hover{
+  color: #FBC237;
+  /*background-color: rgba(255,255,255,0.2);*/
+}
+
+.glyphicon-remove{
+  color: darkred;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+.glyphicon-plus {
+  color: green;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+.glyphicon-ok, .glyphicon-pencil {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0.5em;
+  margin: 0.5em;
 }

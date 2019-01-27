@@ -1,0 +1,17 @@
+.text{
+}
+table{
+   width: 100%;
+ }
+
+caption{
+  text-align: center;
+  font-size: 3em;
+  color: white;
+  padding-bottom: 1em;
+}
+td{
+  padding: 0em 2em;
+  vertical-align: top;
+  font-size: 2em;
+}

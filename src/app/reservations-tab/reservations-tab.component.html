@@ -1,0 +1,30 @@
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="reservationId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+      <td mat-cell *matCellDef="let reservation"> {{reservation.reservationId}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="rtableId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Table ID </th>
+      <td mat-cell *matCellDef="let reservation"> {{reservation.rtableId}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="dateTime">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Time </th>
+      <td mat-cell *matCellDef="let reservation"> {{reservation.dateTime}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="Options">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Options </th>
+      <td mat-cell *matCellDef="let reservation ">
+        <a (click)="confirmReservation(reservation.reservationId)" class="glyphicon glyphicon-ok"></a>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>

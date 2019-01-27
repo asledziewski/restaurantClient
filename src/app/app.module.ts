@@ -32,6 +32,11 @@ import { ReservationManagementComponent } from './reservation-management/reserva
 import {BillManagementComponent} from '@app/bill-management/bill-management.component';
 import {MatTableModule} from '@angular/material/table';
 
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
+import { FooterComponent } from './footer/footer.component';
+import { BillDetailsComponent } from './bill-details/bill-details.component';
+import { TablesTabComponent } from './tables-tab/tables-tab.component';
+import { ReservationsTabComponent } from './reservations-tab/reservations-tab.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -42,6 +47,8 @@ import {MatTableModule} from '@angular/material/table';
     MatSortModule,
     ReactiveFormsModule,
     HttpClientModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule,
     routing
   ],
   declarations: [
@@ -65,7 +72,10 @@ import {MatTableModule} from '@angular/material/table';
     ServiceTableComponent,
     ProfileComponent,
     ReservationManagementComponent,
-  ],
+    FooterComponent,
+    BillDetailsComponent,
+    TablesTabComponent,
+    ReservationsTabComponent ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
