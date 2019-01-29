@@ -18,6 +18,8 @@ import {DishManagementComponent} from '@app/dish-management/dish-management.comp
 import {TableManagementComponent} from '@app/table-management/table-management.component';
 import {ProfileComponent} from '@app/profile/profile.component';
 import {BillDetailsComponent} from '@app/bill-details/bill-details.component';
+import {AuthWorkerGuard} from '@app/_guards/auth.worker.guard';
+import {AuthAdminGuard} from '@app/_guards/auth.admin.guard';
 
 const appRoutes: Routes = [
   {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
@@ -27,17 +29,16 @@ const appRoutes: Routes = [
   {path: 'menu', component: MenuComponent},
   {path: 'reservation', component: ReservationComponent},
   // {path: 'service', component: ServiceComponent, canActivate: [AuthGuard]},
-  {path: 'service/serviceTable', component: ServiceTableComponent},
-  {path: 'service/serviceReservation', component: ServiceReservationComponent},
+  {path: 'service/serviceTable', component: ServiceTableComponent, canActivate: [AuthWorkerGuard]},
+  {path: 'service/serviceReservation', component: ServiceReservationComponent, canActivate: [AuthWorkerGuard]},
   // {path: 'management', component: ManagementComponent, canActivate: [AuthGuard]},
-  {path: 'management/usersManagement', component: UserManagementComponent},
-  {path: 'management/reservationsManagement', component: ReservationManagementComponent},
-  {path: 'management/billsManagement', component: BillManagementComponent},
-  {path: 'management/dishesManagement', component: DishManagementComponent},
-  {path: 'management/tablesManagement', component: TableManagementComponent},
-  {path: 'profile', component: ProfileComponent},
-  {path: 'bill/:id', component: BillDetailsComponent},
+  {path: 'management/usersManagement', component: UserManagementComponent, canActivate: [AuthAdminGuard]},
+  {path: 'management/reservationsManagement', component: ReservationManagementComponent, canActivate: [AuthAdminGuard]},
+  {path: 'management/billsManagement', component: BillManagementComponent, canActivate: [AuthAdminGuard]},
+  {path: 'management/dishesManagement', component: DishManagementComponent, canActivate: [AuthAdminGuard]},
+  {path: 'management/tablesManagement', component: TableManagementComponent, canActivate: [AuthAdminGuard]},
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  {path: 'bill/:id', component: BillDetailsComponent, canActivate: [AuthWorkerGuard]},
   {path: '**', redirectTo: 'about', pathMatch: 'full'}
 ];
-// canActivate: [AuthGuard]
 export const routing = RouterModule.forRoot(appRoutes);

@@ -1,0 +1,10 @@
+input{
+  text-align: center;
+  width: 50vw;
+}
+
+table{
+  width: 100%;
+  table-layout: fixed;
+  text-align: left;
+}

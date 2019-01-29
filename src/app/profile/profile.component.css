@@ -1,0 +1,29 @@
+table {
+  text-align: left;
+  width: 100%;
+  padding: auto;
+}
+
+.title {
+  font-size: 4em;
+}
+
+
+table {
+  width: 100%;
+  text-align: left;
+}
+
+.tab{
+  padding: 0em 2em;
+}
+
+.mat-elevation-z8{
+  padding: 2em 2em;
+}
+
+
+.info{
+  padding-top: 2em;
+  font-size: 2em;
+}

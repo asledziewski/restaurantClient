@@ -57,8 +57,8 @@ export class BillDetailsComponent implements OnInit {
   deletePosition(positionId: number) {
     this.billPositionService.deleteBillPosition(positionId).subscribe( () => {
       this.billService.getBillPositions(this.id).subscribe( positions => this.positions = positions);
-      this.billService.getBillById(this.id).subscribe( bill => this.bill = bill);
-    });
+      this.billService.getBillById(this.id).subscribe( bill => {this.bill = bill; });
+    }, e => this.alertService.error(e));
   }
 
   addPosition(dishId: number) {
@@ -70,7 +70,7 @@ export class BillDetailsComponent implements OnInit {
             () => {
               this.billService.getBillPositions(this.id).subscribe( positions => this.positions = positions);
               this.billService.getBillById(this.id).subscribe( bill => this.bill = bill);
-            });
+            }, error1 => this.alertService.error(error1));
     }
     );
   }

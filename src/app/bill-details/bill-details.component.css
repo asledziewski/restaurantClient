@@ -4,6 +4,9 @@ table{
 }
 .header{
   font-size: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+  font-style: oblique;
 }
 .text{
   padding-top: 4em;
@@ -11,6 +14,8 @@ table{
 
 tr{
   border-bottom: 1px solid #ddd;
+  background-color: rgba(0,0,0, 0.1);
+  font-size: 1.5em;
 }
 
 .search-result {
@@ -51,4 +56,12 @@ a.result{
 
 li.a{
   color: black;
+}
+
+.paid{
+  color: darkred;
+}
+
+.in_progress{
+  color: #EAB126;
 }

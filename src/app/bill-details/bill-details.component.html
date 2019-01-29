@@ -1,6 +1,8 @@
 <div class="content">
-  <div class = "title">Bill {{id}} Table {{bill.rtableId}}  <br> Status: <span>{{bill.status}}</span></div>
+  <div class = "title">Bill {{id}} Table {{bill.rtableId}}  <br> Status: <span [ngClass]="{'paid': (bill.status === 'PAID'),
+    'in_progress': (bill.status==='IN_PROGRESS')} ">{{bill.status}}</span></div>
   <div class = "text">
+    <app-alert></app-alert>
     <table>
       <tr class="header"><td>Name</td><td>Price</td><td>Delete</td></tr>
       <tr *ngFor="let position of positions">
@@ -23,6 +25,6 @@
       </ul>
       <input #searchBox id="search-box" (input)="search(searchBox.value)" />
     </div>
-    <button class="btn btn-primary" (click)="closeBill()">Close Bill</button>
+    <button *ngIf="bill.status === 'IN_PROGRESS'" class="btn btn-primary" (click)="closeBill()">Close Bill</button>
   </div>
 </div>

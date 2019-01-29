@@ -19,7 +19,7 @@ export class TablesTabComponent implements OnInit {
   currentUser: User;
   currentUserSubscription: Subscription;
   tables: Table[] = [];
-  displayedColumns = ['rtableId', 'number', 'size', 'status', 'Options'];
+  displayedColumns = ['number', 'size', 'status', 'Options'];
   dataSource = new MatTableDataSource<Table>();
 
   constructor(

@@ -1,10 +1,30 @@
 <div class="content">
-  {{currentUser.userId}}<br>
-  {{currentUser.firstName}}<br>
-  {{currentUser.jwtToken}}<br>
-  {{currentUser.lastName}}<br>
-  {{currentUser.mail}}<br>
-  <li *ngFor="let role of currentUser.roles">{{role.roleName}}</li>
+  <div class="title">My reservations</div>
+  <div class="text">
+    <div class="mat-elevation-z8" *ngIf="dataSource.data.length>0">
+      <table mat-table [dataSource]="dataSource" matSort>
+        <ng-container matColumnDef="rTableNumber">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Table Number </th>
+          <td mat-cell *matCellDef="let reservation"> {{reservation.rTableNumber}} </td>
+        </ng-container>
 
-  <li *ngFor="let reservation of currentUser.reservations">{{reservation.dateDays}} {{reservation.dateTime}} {{reservation.status}}</li>
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Time </th>
+          <td mat-cell *matCellDef="let reservation"> {{reservation.date | date: 'medium'}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Options">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Options </th>
+          <td mat-cell *matCellDef="let reservation ">
+            <a (click)="cancelReservation(reservation.reservationId)" class="glyphicon glyphicon-remove"></a>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+    <div *ngIf="dataSource.data.length<1" class = "info" >You have no reservations.</div>
+  </div>
 </div>

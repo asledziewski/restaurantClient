@@ -20,7 +20,7 @@ export class ReservationsTabComponent implements OnInit, OnDestroy {
   currentUser: User;
   currentUserSubscription: Subscription;
   reservations: Reservation[] = [];
-  displayedColumns = ['reservationId', 'rtableId', 'dateTime', 'Options'];
+  displayedColumns = ['rTableNumber', 'dateTime', 'Options'];
   dataSource = new MatTableDataSource<Reservation>();
 
   constructor(

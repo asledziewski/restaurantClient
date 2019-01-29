@@ -18,11 +18,12 @@
               <div *ngIf="f.attendees.errors.required">Please specify number of attendees.</div>
               <div *ngIf="f.attendees.errors.min">There has to be at least one attendee.</div>
               <div *ngIf="f.attendees.errors.max">Number of attendees is too high.</div>
+              <div *ngIf="f.attendees.errors.pattern">Invalid format of attendees number.</div>
             </div>
           </div>
           <div class="form-group">
             <label for="date">Date</label><br>
-            <input  formControlName="date" [min]="min" [max]="max"  [owlDateTimeFilter]="myFilter" [owlDateTimeTrigger]="dtPicker2" [owlDateTime]="dtPicker2"  [ngClass]="{ 'is-invalid': submitted && f.date.errors }" />
+            <input  formControlName="date" [min]="min" [max]="max" [owlDateTimeFilter]="myFilter" [owlDateTimeTrigger]="dtPicker2" [owlDateTime]="dtPicker2"  [ngClass]="{ 'is-invalid': submitted && f.date.errors }" />
             <owl-date-time #dtPicker2 [stepMinute]="30" [pickerMode]="'dialog'"></owl-date-time>
             <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
               <div *ngIf="f.date.errors.required">Date is required</div>

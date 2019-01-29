@@ -1,1 +1,98 @@
-<div class="content"></div>
+<div class="content">
+  <div class="title">User Management</div>
+  <div class="text">
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="ID">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let user"> {{user.userId}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="firstName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name</th>
+          <td mat-cell *matCellDef="let user"> {{user.firstName}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="lastName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+          <td mat-cell *matCellDef="let user"> {{user.lastName}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+          <td mat-cell *matCellDef="let user"> {{user.mail}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="roles">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Roles </th>
+          <td mat-cell *matCellDef="let user"> <li *ngFor="let role of user.roles">{{role.roleName}}</li> </td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Delete </th>
+          <td mat-cell *matCellDef="let user"><a (click)="deleteUser(user.userId)" class="glyphicon glyphicon-remove"></a></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+
+    <form (ngSubmit)="onSubmit()" [formGroup]="userForm">
+      <app-alert></app-alert>
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" class="form-control" formControlName="firstName"
+               type="text"/>
+        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+          <div *ngIf="f.firstName.errors.required">First Name is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" class="form-control" formControlName="lastName"
+               type="text"/>
+        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+          <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="mail">Email</label>
+        <input [ngClass]="{ 'is-invalid': submitted && f.mail.errors }" class="form-control" formControlName="mail"
+               type="text"/>
+        <div *ngIf="submitted && f.mail.errors" class="invalid-feedback">
+          <div *ngIf="f.mail.errors.required">Email is required</div>
+          <div *ngIf="f.mail.errors.email">Invalid email format</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input [ngClass]="{ 'is-invalid': submitted && f.password.errors }" class="form-control" formControlName="password"
+               type="password" required/>
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Password is required</div>
+          <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters long</div>
+        </div>
+      </div>
+        <div class="form-group">
+          <label for="roles">Role</label>
+          <select class="form-control" formControlName="roles"
+                 type="select" required>
+            <option *ngFor="let role of roles" [value]="role">{{role}}</option>
+          </select>
+        </div>
+      <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Add User</button>
+      </div>
+    </form>
+
+
+  </div>
+</div>
