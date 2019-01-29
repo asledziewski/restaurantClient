@@ -22,24 +22,4 @@ export class MenuComponent implements OnInit {
     this.dishService.getDishes()
       .subscribe(dishes => this.dishes = dishes);
   }
-
-  add(englishName: string, polishName: string, price: number): void {
-    englishName = englishName.trim();
-    polishName = polishName.trim();
-    if (!englishName || !polishName || !price) {
-      return;
-    }
-    this.dishService.addDish({englishName, polishName, price} as Dish)
-      .subscribe(dish => {
-        this.dishes.push(dish);
-      });
-  }
-
-  // delete(hero: Hero): void {
-  //   this.heroes = this.heroes.filter(h => h !== hero);
-  //   this.heroService.deleteHero(hero).subscribe();
-  // }
-  //
-  // update
-
 }
