@@ -37,6 +37,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BillDetailsComponent } from './bill-details/bill-details.component';
 import { TablesTabComponent } from './tables-tab/tables-tab.component';
 import { ReservationsTabComponent } from './reservations-tab/reservations-tab.component';
+import { WeatherComponent } from './weather/weather.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -75,7 +76,8 @@ import { ReservationsTabComponent } from './reservations-tab/reservations-tab.co
     FooterComponent,
     BillDetailsComponent,
     TablesTabComponent,
-    ReservationsTabComponent ],
+    ReservationsTabComponent ,
+    WeatherComponent],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},

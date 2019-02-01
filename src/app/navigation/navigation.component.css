@@ -10,6 +10,7 @@ li a {
   color: white;
 }
 
+
 li a:focus {
   background-color: #EAB126;
 }
@@ -32,5 +33,9 @@ li a:hover {
   color: black;
 }
 
+.weather {
+  color: white;
+  padding: 1em;
+}
 
 

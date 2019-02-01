@@ -7,8 +7,6 @@ import {AuthGuard} from '@app/_guards';
 import {MenuComponent} from '@app/menu/menu.component';
 import {AboutComponent} from '@app/about/about.component';
 import {ReservationComponent} from '@app/reservation/reservation.component';
-import {ServiceComponent} from '@app/service/service.component';
-import {ManagementComponent} from '@app/management/management.component';
 import {ServiceTableComponent} from '@app/service-table/service-table.component';
 import {ServiceReservationComponent} from '@app/service-reservation/service-reservation.component';
 import {UserManagementComponent} from '@app/user-management/user-management.component';
