@@ -27,4 +27,6 @@
     </div>
     <div *ngIf="dataSource.data.length<1" class = "info" >You have no reservations.</div>
   </div>
+
+  <p>{{image?.replace('data:image/png;base64,', '')}}</p>
 </div>

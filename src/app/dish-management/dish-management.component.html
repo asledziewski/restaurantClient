@@ -61,6 +61,9 @@
           <div *ngIf="f.price.errors.min">Price has to be positive number.</div>
         </div>
       </div>
+      <label>Image</label>
+      <input type="file" accept="image/png" (change)="changeListener($event)" class="form-control">
+      <br>
       <div class="form-group">
         <button [disabled]="loading" class="btn btn-primary">Add Dish</button>
       </div>

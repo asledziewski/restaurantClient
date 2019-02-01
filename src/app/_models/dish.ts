@@ -3,4 +3,5 @@ export class Dish {
   englishName: string;
   polishName: string;
   price: number;
+  image: string;
 }

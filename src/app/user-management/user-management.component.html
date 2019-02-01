@@ -31,7 +31,7 @@
         <!-- Symbol Column -->
         <ng-container matColumnDef="roles">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Roles </th>
-          <td mat-cell *matCellDef="let user"> <li *ngFor="let role of user.roles">{{role.roleName}}</li> </td>
+          <td mat-cell *matCellDef="let user"> <li style="list-style: none" *ngFor="let role of user.roles">{{role.roleName}}</li> </td>
         </ng-container>
 
         <ng-container matColumnDef="delete">

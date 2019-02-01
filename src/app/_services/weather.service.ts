@@ -11,6 +11,6 @@ export class WeatherService {
 
 
   getWeather() {
-    return this.http.get(`http://api.openweathermap.org/data/2.5/weather?q=Warszawa&APPID=0c461a2c0524472ef431bf8bbb835003`);
+    return this.http.get('http://api.openweathermap.org/data/2.5/weather?q=Warszawa&APPID=bb24199c0da7636a94dc783d62ad98d4');
   }
 }

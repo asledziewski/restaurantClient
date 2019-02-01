@@ -32,8 +32,8 @@ export class DishService {
     return this.http.get<Dish>(`${this.dishesUrl}/${id}`);
   }
 
-  addDish(englishName: string, polishName: string, price: number) {
-    return this.http.post<any>(this.dishesUrl, {englishName, polishName, price});
+  addDish(englishName: string, polishName: string, price: number, image: string) {
+    return this.http.post<any>(this.dishesUrl, {englishName, polishName, price, image});
   }
 
   deleteDish(id: number) {

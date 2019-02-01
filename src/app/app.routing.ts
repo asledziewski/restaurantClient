@@ -1,6 +1,5 @@
 ﻿import {RouterModule, Routes} from '@angular/router';
 
-import {HomeComponent} from '@app/home';
 import {LoginComponent} from '@app/login';
 import {RegisterComponent} from '@app/register';
 import {AuthGuard} from '@app/_guards';
@@ -20,16 +19,13 @@ import {AuthWorkerGuard} from '@app/_guards/auth.worker.guard';
 import {AuthAdminGuard} from '@app/_guards/auth.admin.guard';
 
 const appRoutes: Routes = [
-  {path: 'home', component: HomeComponent, canActivate: [AuthGuard]},
   {path: 'about', component: AboutComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'menu', component: MenuComponent},
   {path: 'reservation', component: ReservationComponent},
-  // {path: 'service', component: ServiceComponent, canActivate: [AuthGuard]},
   {path: 'service/serviceTable', component: ServiceTableComponent, canActivate: [AuthWorkerGuard]},
   {path: 'service/serviceReservation', component: ServiceReservationComponent, canActivate: [AuthWorkerGuard]},
-  // {path: 'management', component: ManagementComponent, canActivate: [AuthGuard]},
   {path: 'management/usersManagement', component: UserManagementComponent, canActivate: [AuthAdminGuard]},
   {path: 'management/reservationsManagement', component: ReservationManagementComponent, canActivate: [AuthAdminGuard]},
   {path: 'management/billsManagement', component: BillManagementComponent, canActivate: [AuthAdminGuard]},

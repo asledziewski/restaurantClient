@@ -16,7 +16,9 @@ export class WeatherComponent implements OnInit {
   }
   getTemperature() {
     this.weatherService.getWeather().subscribe(w => {
-    //  this.temperature = w.main.temp;
+      const weatherData = JSON.stringify(w);
+      const  temp = JSON.parse(weatherData);
+      this.temperature = temp.main.temp;
       this.temperature = this.temperature - 273.15;
     });
 

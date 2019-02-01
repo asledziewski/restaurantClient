@@ -27,6 +27,7 @@ export class DishManagementComponent implements OnInit, OnDestroy {
   dishForm: FormGroup;
   loading = false;
   submitted = false;
+  image;
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -84,17 +85,31 @@ export class DishManagementComponent implements OnInit, OnDestroy {
     }
 
     this.loading = true;
-    this.dishService.addDish(this.f.englishName.value, this.f.polishName.value, this.f.price.value)
+    this.dishService.addDish(this.f.englishName.value, this.f.polishName.value, this.f.price.value, this.image.replace('data:image/png;base64,', ''))
       .pipe(first())
       .subscribe(
         () => {
-          location.reload();
           this.loadDishes();
+          location.reload();
         },
         error => {
           this.alertService.error(error);
           this.loading = false;
         });
+  }
+
+  changeListener($event): void {
+    this.readThis($event.target);
+  }
+  readThis(inputValue: any): void {
+    let file: File = inputValue.files[0];
+    let myReader: FileReader = new FileReader();
+
+    myReader.onloadend = (e) => {
+      this.image = myReader.result;
+      console.log(myReader.result);
+    }
+    myReader.readAsDataURL(file);
   }
 }
 

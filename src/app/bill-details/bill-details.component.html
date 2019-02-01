@@ -25,6 +25,7 @@
       </ul>
       <input #searchBox id="search-box" (input)="search(searchBox.value)" />
     </div>
+    <br>
     <button *ngIf="bill.status === 'IN_PROGRESS'" class="btn btn-primary" (click)="closeBill()">Close Bill</button>
   </div>
 </div>

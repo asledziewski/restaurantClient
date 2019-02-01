@@ -10,14 +10,14 @@ body {
 }
 
 form{
-  width: 60%;
   margin: auto;
   padding-top: 4em;
+  width: 30vh;
 }
 input{
   color: black;
-  width: auto;
   margin: auto;
+  text-align: center;
 }
 
 .content {
@@ -117,7 +117,6 @@ a:active:hover{
   color: darkred;
 }
 
-input{
-  text-align: center;
-  width: 50vw;
-}
+
+
+
