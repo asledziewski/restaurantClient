@@ -1,6 +1,6 @@
 # restaurantClient
 
-Projekt aplikacji internetowej wykonanej na przedmiot Programowanie zdarzeniowe na 6. semestrze studiów.
+Projekt aplikacji internetowej wykonanej na przedmiot Programowanie zdarzeniowe na 5. semestrze studiów.
 Zadaniem aplikacji jest wpieranie działalności restauracji w wybranych obszarach, do których należą m.in. obsługa stolików i rezerwacji.
 
 * [Dokumentacja projektu](https://studentwat-my.sharepoint.com/:b:/g/personal/adrian_sledziewski_student_wat_edu_pl/Eb6qSvJVtfpNi_SV2zGMTqYBOC8dQNx9xMqEQ7bhgKoS1Q?e=L5v6Tq)
